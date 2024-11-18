@@ -59,15 +59,26 @@ To run this project locally, follow these steps:
 **The file structure of the project is organized for easy scalability and maintenance**:
 
 ```
-/src
+/app
+   /event-details.tsx    # Displays detailed information about an event
+      /index.tsx         # EventDetails Component 
+   /index.tsx            # Displays the information about an calender(Home screen)
+  /_layout.tsx           # Rootlayout of the calender app
+  /+not-found.tsx        # Component for handling incorrect routes, displaying a 404 not found screen.
+
 /components
-/EventList.js # Lists all events in a weekly format
-/EventDetail.js # Displays detailed information about an event
-/Navbar.js # The custom navigation bar
+   /CalenderEvent.tsx    # Lists all events in a weekly format
+   /WeekDayHeader.tsx    # Displays detailed information about an event
+   /context.js           # React context for managing event visibility and global state
+     
 /assets
-/icons # Folder containing icons used in the app
-/data
-/events.js # File simulating a database with event data
-/App.js # Main component that brings everything together
-/context.js # React context for managing event visibility and global state
+   /icons                # Folder containing icons used in the app
+  /screenshot            # Folder of app screenshots
+
+/constant
+   /icon.ts              # File containing routes of icons used in the app
+  /events.js             # File simulating a database with event data
+
+/App.js                  # Main component that brings everything together
+/declaration.d.ts        # TypeScript declaration file for type definitions and module declarations.
 ```
