@@ -18,19 +18,6 @@ This app leverages React for efficient rendering and context management, making 
   - **Icons**: Stored separately, ensuring easy updates and maintenance without interfering with other parts of the app.
   - **Events**: Event data (e.g., event names, timings, images) is organized to simulate a database, making it easy to manage and update data without disrupting the UI.
 
-## Screenshots
-
-### Home Page
-
-![Home Page](./assets/screenshots/iphoneCase1.png)
-
-### When an Upcoming Event is Clicked
-
-![Upcoming Event](./assets/screenshots/iphoneCase2.png)
-
-### When a Completed Event is Clicked
-
-![Completed Event](./assets/screenshots/iphoneCase3.png)
 
 ## Installation
 
