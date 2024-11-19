@@ -39,8 +39,7 @@ export default function WeeklyOverview() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Platform.OS === "android" ? StatusBar.currentHeight || 0 : 80,
-    paddingTop: Platform.OS === "ios" ? 80 : 0,
+    paddingTop: 80,
     flex: 1,
     backgroundColor: "#181818",
   },
