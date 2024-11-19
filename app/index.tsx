@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Image, StatusBar, Platform } from "react-native";
+import { View, StyleSheet, Image, ScrollView, Platform } from "react-native";
 import icons from "../constants/icon";
 import WeekDayHeader from "@/components/WeekDayHeader";
 import CalendarEvent from "@/components/CalenderEvent";
@@ -27,21 +27,31 @@ export default function WeeklyOverview() {
 
   return (
     <View style={styles.container}>
-      <Image source={icons.curve1} style={styles.curve1} resizeMode="contain" />
-      <View style={styles.header}>
-        <Navigation />
-        <WeekDayHeader />
-      </View>
-      <CalendarEvent />
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <Image
+          source={icons.curve1}
+          style={styles.curve1}
+          resizeMode="contain"
+        />
+        <View style={styles.header}>
+          <Navigation />
+          <WeekDayHeader />
+        </View>
+        <CalendarEvent />
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 80,
     flex: 1,
     backgroundColor: "#181818",
+    paddingTop: Platform.OS === "android" ? 50 : 60,
+  },
+  scrollContent: {
+    flexGrow: 1,
+    paddingTop: Platform.OS === "android" ? 10 : 15,
   },
   curve1: {
     position: "absolute",

@@ -159,6 +159,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
     flexDirection: "column",
     gap: 6,
+    paddingBottom: 40,
   },
   eventCardHeader: {
     backgroundColor: "#FCD36A",

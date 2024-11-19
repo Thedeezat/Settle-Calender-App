@@ -70,6 +70,10 @@ const events: Event[] = [
         title: "Events and bonding session for the week",
         time: "1:45 - 2:30 PM",
       },
+      {
+        title: "More bonding session for the week",
+        time: "1:45 - 2:30 PM",
+      },
     ],
   },
 ];

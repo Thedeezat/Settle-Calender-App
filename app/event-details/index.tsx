@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Animated,
   Dimensions,
+  ScrollView,
   Image,
   TouchableOpacity,
 } from "react-native";
@@ -104,7 +105,11 @@ const EventDetails: React.FC<EventDetailsProps> = ({ event }) => {
                 </Text>
               )}
 
-              <View style={styles.itemContainer}>
+              {/* Make minute scrollable */}
+              <ScrollView
+                style={styles.itemContainer}
+                contentContainerStyle={styles.itemContent}
+              >
                 {event.minutes?.map((minute, index) => (
                   <View
                     key={index}
@@ -114,7 +119,7 @@ const EventDetails: React.FC<EventDetailsProps> = ({ event }) => {
                     <Text style={styles.itemTime}>{minute.time}</Text>
                   </View>
                 ))}
-              </View>
+              </ScrollView>
             </View>
           </View>
         </View>
@@ -140,16 +145,16 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 40,
     paddingTop: 20,
     position: "absolute",
-    height: "98%",
+    height: "100%",
     flex: 1,
     bottom: 0,
     elevation: 3,
-    zIndex: 2,
+    zIndex: 3,
+    // paddingBottom: 40,
   },
   eventWrapper: {
     justifyContent: "flex-start",
     alignItems: "center",
-    height: "100%",
   },
   avatarContainer: {
     width: "90%",
@@ -165,7 +170,7 @@ const styles = StyleSheet.create({
   editIcon_container: {
     backgroundColor: "#EDEDED",
     width: 48,
-    borderRadius: "50%",
+    borderRadius: 24,
     justifyContent: "center",
     alignItems: "center",
     height: 48,
@@ -237,9 +242,13 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     paddingHorizontal: 16,
+    maxHeight: 340,
+  },
+  itemContent: {
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center",
+    paddingBottom: 20,
   },
   item: {
     flexDirection: "row",
